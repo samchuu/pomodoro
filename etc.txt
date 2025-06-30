@@ -1,9 +1,0 @@
-import { createPortal } from "react-dom"
-import Modal from "./components/Modal/Modal"
-
-Modal
-const [showModal, setShowModal] = useState(false)
-
-{
-  showModal && createPortal(<Modal setDuration={setDuration} />, document.body)
-}
