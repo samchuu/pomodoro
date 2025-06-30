@@ -9,7 +9,7 @@ import Logo from "./components/Logo/Logo"
 
 function App() {
   const [activeTab, setActiveTab] = useState<Tab>("pomodoro")
-  const [duration, setDuration] = useState(DEFAULT_DURATIONS)
+  const [duration, _setDuration] = useState(DEFAULT_DURATIONS)
 
   return (
     <div className="bg-[#1e213f] font-kumbh-sans">
