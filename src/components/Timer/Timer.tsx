@@ -33,7 +33,7 @@ export default function Timer({ duration, activeTab }: TimerProps) {
   }
 
   return (
-    <div className="px-9">
+    <div className="px-9 mt-14">
       <div
         className="rounded-full p-5 md:w-[410px]"
         style={{ background: "linear-gradient(315deg, #2e325a 0%, #0e112a 100%)", boxShadow: "-50px -50px 100px #272c5a, 50px 50px 100px #121530" }}

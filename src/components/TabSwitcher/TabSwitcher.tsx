@@ -18,7 +18,7 @@ export default function TabSwitcher({ activeTab, setActiveTab }: TabSwitcherProp
   ]
 
   return (
-    <div className="flex justify-center my-10 md:my-14 bg-[#161932] py-2.5 px-2.5 rounded-4xl w-[327px] h-[63px] md:w-[373px]">
+    <div className="flex justify-center mt-10 md:mt-14 bg-[#161932] py-2.5 px-2.5 rounded-4xl w-[327px] h-[63px] md:w-[373px]">
       {tabs.map(({ tab, label }) => (
         <button
           key={label}
