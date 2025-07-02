@@ -1,5 +1,7 @@
+import type { TimerAction } from "./Timer"
+
 interface TimerControlButtonProps {
-  name: string
+  name: TimerAction
   onClick: () => void
 }
 

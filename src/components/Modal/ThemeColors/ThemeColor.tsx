@@ -1,5 +1,5 @@
-import { themeClassMap, type Theme } from "../../../types/theme"
 import check from "../../../assets/check.svg"
+import { type Theme, themeClassMap } from "../../../config/theme"
 interface ThemeColorProps {
   color: Theme
   tempThemeColor: Theme

@@ -1,4 +1,4 @@
-import type { Theme } from "../../../types/theme"
+import type { Theme } from "../../../config/theme"
 import ThemeColor from "./ThemeColor"
 
 interface ThemeColorsProps {

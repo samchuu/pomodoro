@@ -1,12 +1,12 @@
 import type { DurationType } from "../../config/defaultDurations"
 import { useState } from "react"
-import { fontFamilyClassMap, type FontFamily } from "../../types/fonts"
-import { type Theme } from "../../types/theme"
 import Modes from "./Modes/Modes"
 import Fonts from "./Fonts/Fonts"
 import ThemeColors from "./ThemeColors/ThemeColors"
 import ModalHeader from "./ModalHeader/ModalHeader"
 import ApplyButton from "./ApplyButton/ApplyButton"
+import { fontFamilyClassMap, type FontFamily } from "../../config/fonts"
+import type { Theme } from "../../config/theme"
 
 interface ModalProps {
   duration: DurationType

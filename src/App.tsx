@@ -1,7 +1,5 @@
 import { useState } from "react"
 import { createPortal } from "react-dom"
-import { type FontFamily, fontFamilyClassMap } from "./types/fonts"
-import { type Theme } from "./types/theme"
 import { DEFAULT_DURATIONS, type DurationType } from "./config/defaultDurations"
 import Logo from "./components/Logo/Logo"
 import TabSwitcher from "./components/TabSwitcher/TabSwitcher"
@@ -11,6 +9,8 @@ import Modal from "./components/Modal/Modal"
 import Overlay from "./components/Overlay/Overlay"
 import "./App.css"
 import type { Tabs } from "./types/tabs"
+import { type FontFamily, fontFamilyClassMap } from "./config/fonts"
+import type { Theme } from "./config/theme"
 
 function App() {
   const [activeTab, setActiveTab] = useState<Tabs>("pomodoro")

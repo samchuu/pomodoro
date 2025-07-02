@@ -1,4 +1,4 @@
-import { type FontFamily, fontFamilyClassMap } from "../../../types/fonts"
+import { type FontFamily, fontFamilyClassMap } from "../../../config/fonts"
 
 interface FontProps {
   font: FontFamily

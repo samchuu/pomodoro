@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react"
+import type { DurationType } from "../config/defaultDurations"
+import type { Tabs } from "../types/tabs"
 
-export default function useTimer(duration: Record<string, number>, activeTab: string) {
+export default function useTimer(duration: DurationType, activeTab: Tabs) {
   const [seconds, setSeconds] = useState(duration[activeTab])
   const [isActive, setIsActive] = useState(false)
   const intervalRef = useRef<number | null>(null)

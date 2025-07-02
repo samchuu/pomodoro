@@ -1,10 +1,8 @@
-export type DurationType = {
-  pomodoro: number
-  shortBreak: number
-  longBreak: number
-}
+import type { Tabs } from "../types/tabs"
 
-export const DEFAULT_DURATIONS = {
+export type DurationType = Record<Tabs, number>
+
+export const DEFAULT_DURATIONS: DurationType = {
   pomodoro: 25 * 60,
   shortBreak: 5 * 60,
   longBreak: 15 * 60,

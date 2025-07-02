@@ -1,4 +1,4 @@
-import { themeClassMap, type Theme } from "../../../types/theme"
+import { type Theme, themeClassMap } from "../../../config/theme"
 
 interface ApplyButtonProps {
   tempThemeColor: Theme
