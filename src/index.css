@@ -1,6 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Lusitana:wght@400;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Lusitana:wght@400;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Outfit:wght@100..900&family=Roboto+Slab:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Lusitana:wght@400;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Outfit:wght@100..900&family=Roboto+Slab:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import "tailwindcss";
+
+:root {
+  --color-primary: #f87070;
+  --color-secondary: #70f3f8;
+  --color-tertiary: #d881f8;
+}
 
 @theme {
   --font-kumbh-sans: "Kumbh Sans", sans-serif;
+  --font-roboto-slab: "Roboto Slab", sans-serif;
+  --font-space-mono: "Space Mono", sans-serif;
 }

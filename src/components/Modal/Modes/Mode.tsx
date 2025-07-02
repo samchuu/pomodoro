@@ -1,19 +1,22 @@
-import increment from "../../assets/icon-arrow-up.svg"
-import decrement from "../../assets/icon-arrow-down.svg"
-import { formatMinutesOnly } from "../../utils/formatTime"
-import type { DurationType } from "../../config/defaultDurations"
+import type { DurationType } from "../../../config/defaultDurations"
+import { formatMinutesOnly } from "../../../utils/formatTime"
+import increment from "../../../assets/icon-arrow-up.svg"
+import decrement from "../../../assets/icon-arrow-down.svg"
 
-interface ModesProps {
+interface ModeProps {
   mode: keyof DurationType
   value: number
   setTempDurations: React.Dispatch<React.SetStateAction<DurationType>>
 }
 
-export default function Modes({ mode, value, setTempDurations }: ModesProps) {
-  const handleIncrement = () => setTempDurations((prev) => ({ ...prev, [mode]: prev[mode] + 60 }))
+export default function Mode({ mode, value, setTempDurations }: ModeProps) {
+  const handleIncrement = () => {
+    setTempDurations((prev) => (prev[mode] > 60 ? { ...prev, [mode]: prev[mode] + 60 } : prev))
+  }
 
-  const handleDecrement = () => setTempDurations((prev) => ({ ...prev, [mode]: prev[mode] - 60 }))
-
+  const handleDecrement = () => {
+    setTempDurations((prev) => (prev[mode] > 60 ? { ...prev, [mode]: prev[mode] - 60 } : prev))
+  }
   return (
     <div className="flex justify-between items-center md:flex-col md:items-start md:gap-2">
       <div className="opacity-40 text-[#1E213F] font-bold text-xs">{mode}</div>

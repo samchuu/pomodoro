@@ -1,15 +1,17 @@
 import useTimer from "../../hooks/useTimer"
+import { themeClassMap, type Theme } from "../../types/theme"
 import { formatTime } from "../../utils/formatTime"
 import TimerControlButton from "./TimerControlButton"
 import { buildStyles, CircularProgressbarWithChildren } from "react-circular-progressbar"
 import "react-circular-progressbar/dist/styles.css"
 
 interface TimerProps {
+  selectedTheme: Theme
   duration: Record<string, number>
   activeTab: string
 }
 
-export default function Timer({ duration, activeTab }: TimerProps) {
+export default function Timer({ selectedTheme, duration, activeTab }: TimerProps) {
   const { seconds, isActive, startTimer, pauseTimer, resetTimer } = useTimer(duration, activeTab)
 
   const totalTime = duration[activeTab]
@@ -44,12 +46,14 @@ export default function Timer({ duration, activeTab }: TimerProps) {
           backgroundPadding={4}
           strokeWidth={4}
           styles={buildStyles({
-            pathColor: "#F87070",
+            pathColor: `var(--${themeClassMap[selectedTheme]})`,
             trailColor: "transparent",
             backgroundColor: "#161932",
           })}
         >
-          <p className="text-[#D7E0FF] text-[74px] md:text-[100px] font-bold tracking-[-4px] md:tracking-[-5px]">{formatTime(seconds)}</p>
+          <p className="text-[#D7E0FF] max-[375px]:text-[60px] text-[74px] md:text-[100px] font-bold tracking-[-4px] md:tracking-[-5px]">
+            {formatTime(seconds)}
+          </p>
           <TimerControlButton name={name} onClick={onClick} />
         </CircularProgressbarWithChildren>
       </div>

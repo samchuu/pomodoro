@@ -1,44 +1,46 @@
 import type { DurationType } from "../../config/defaultDurations"
-import close from "../../assets/icon-close.svg"
-import Modes from "./Modes"
 import { useState } from "react"
+import { fontFamilyClassMap, type FontFamily } from "../../types/fonts"
+import { type Theme } from "../../types/theme"
+import Modes from "./Modes/Modes"
+import Fonts from "./Fonts/Fonts"
+import ThemeColors from "./ThemeColors/ThemeColors"
+import ModalHeader from "./ModalHeader/ModalHeader"
+import ApplyButton from "./ApplyButton/ApplyButton"
 
 interface ModalProps {
   duration: DurationType
+  selectedFont: FontFamily
+  selectedTheme: Theme
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>
   setDuration: React.Dispatch<React.SetStateAction<DurationType>>
+  setSelectedFont: React.Dispatch<React.SetStateAction<FontFamily>>
+  setSelectedTheme: React.Dispatch<React.SetStateAction<Theme>>
 }
 
-export default function Modal({ duration, setDuration, setShowModal }: ModalProps) {
+export default function Modal({ duration, selectedFont, selectedTheme, setDuration, setShowModal, setSelectedFont, setSelectedTheme }: ModalProps) {
   const [tempDurations, setTempDurations] = useState(duration)
+  const [tempFont, setTempFont] = useState<FontFamily>(selectedFont)
+  const [tempThemeColor, setTempThemeColor] = useState<Theme>(selectedTheme)
 
   const handleApply = () => {
     setDuration(tempDurations)
+    setSelectedFont(tempFont)
+    setSelectedTheme(tempThemeColor)
     setShowModal(false)
   }
 
   return (
-    <div className="z-30 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-kumbh-sans w-full max-w-[327px] min-h-[575px] md:max-w-[540px] md:min-h-[464px] bg-white rounded-xl">
-      <div className="flex justify-between items-center p-6 border-b-1 border-[#E3E1E1]">
-        <div className="font-bold text-xl">Settings</div>
-        <img src={close} alt="close" className="cursor-pointer" onClick={() => setShowModal(false)} />
-      </div>
-      <div className="px-6 md:px-10">
-        <div className="font-bold mt-6 mb-4 text-xs text-center md:text-left tracking-[4px]">TIME (MINUTES)</div>
-        <div className="flex flex-col gap-2 md:flex-row md:justify-center md:gap-5">
-          {Object.entries(tempDurations).map(([mode, value]) => {
-            return <Modes mode={mode as keyof DurationType} value={value} key={mode} setTempDurations={setTempDurations} />
-          })}
-        </div>
-      </div>
-      <div className="text-center mt-8">
-        <button
-          className="absolute -bottom-13 -translate-x-1/2 -translate-y-1/2 bg-[#F87070] text-white font-bold text-base rounded-[26.5px] cursor-pointer px-12 py-4"
-          onClick={handleApply}
-        >
-          Apply
-        </button>
-      </div>
+    <div
+      className={`${fontFamilyClassMap[tempFont]} bg-white rounded-xl
+      z-30 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+      w-[calc(100%-48px)] max-w-[327px] md:max-w-[540px] min-h-[575px] md:min-h-[464px]`}
+    >
+      <ModalHeader setShowModal={setShowModal} />
+      <Modes tempDurations={tempDurations} setTempDurations={setTempDurations} />
+      <Fonts tempFont={tempFont} setTempFont={setTempFont} />
+      <ThemeColors tempThemeColor={tempThemeColor} setTempThemeColor={setTempThemeColor} />
+      <ApplyButton tempThemeColor={tempThemeColor} onClick={handleApply} />
     </div>
   )
 }
