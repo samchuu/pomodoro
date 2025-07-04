@@ -9,11 +9,16 @@ interface ThemeColorProps {
 export default function ThemeColor({ color, tempThemeColor, setTempThemeColor }: ThemeColorProps) {
   return (
     <div
-      onClick={() => setTempThemeColor(color)}
-      style={{ backgroundColor: `var(--${themeClassMap[color]})` }}
-      className={` rounded-full cursor-pointer w-10 h-10 flex justify-center items-center font-bold text-sm`}
+      className={`border border-transparent rounded-full p-[5px] transition-all duration-200 ease-in-out
+        ${tempThemeColor !== color && "hover:border-[#EFF1FA]"}`}
     >
-      {tempThemeColor === color && <img src={check} alt="check" />}
+      <div
+        onClick={() => setTempThemeColor(color)}
+        style={{ backgroundColor: `var(--${themeClassMap[color]})` }}
+        className={` rounded-full cursor-pointer w-10 h-10 flex justify-center items-center font-bold text-sm`}
+      >
+        {tempThemeColor === color && <img src={check} alt="check" />}
+      </div>
     </div>
   )
 }

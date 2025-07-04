@@ -9,12 +9,17 @@ interface FontProps {
 export default function Font({ font, tempFont, setTempFont }: FontProps) {
   return (
     <div
-      onClick={() => setTempFont(font)}
-      className={`${fontFamilyClassMap[font]} 
+      className={`border border-transparent rounded-full p-[5px] transition-all duration-200 ease-in-out
+        ${tempFont !== font && "hover:border-[#EFF1FA]"}`}
+    >
+      <div
+        onClick={() => setTempFont(font)}
+        className={`${fontFamilyClassMap[font]} 
       ${tempFont === font ? "bg-[#161932] text-white font-bold" : "bg-[#EFF1FA]"} 
       rounded-full cursor-pointer w-10 h-10 flex justify-center items-center text-sm`}
-    >
-      Aa
+      >
+        Aa
+      </div>
     </div>
   )
 }

@@ -7,7 +7,11 @@ interface TimerControlButtonProps {
 
 export default function TimerControlButton({ name, onClick }: TimerControlButtonProps) {
   return (
-    <button className="text-[#D7E0FF] text-base font-bold tracking-[10px] cursor-pointer uppercase" onClick={onClick}>
+    <button
+      className="text-[#D7E0FF] text-base font-bold tracking-[10px] cursor-pointer uppercase hover:opacity-90 transition-all duration-200
+"
+      onClick={onClick}
+    >
       {name}
     </button>
   )
