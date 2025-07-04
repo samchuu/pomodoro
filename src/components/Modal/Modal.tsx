@@ -23,7 +23,8 @@ export default function Modal({ duration, selectedFont, selectedTheme, setDurati
   const [tempFont, setTempFont] = useState<FontFamily>(selectedFont)
   const [tempThemeColor, setTempThemeColor] = useState<Theme>(selectedTheme)
 
-  const handleApply = () => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
     setDuration(tempDurations)
     setSelectedFont(tempFont)
     setSelectedTheme(tempThemeColor)
@@ -31,7 +32,8 @@ export default function Modal({ duration, selectedFont, selectedTheme, setDurati
   }
 
   return (
-    <div
+    <form
+      onSubmit={(e) => handleSubmit(e)}
       className={`${fontFamilyClassMap[tempFont]} bg-white rounded-xl
       z-30 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
       w-[calc(100%-48px)] max-w-[327px] md:max-w-[540px] min-h-[575px] md:min-h-[464px]`}
@@ -40,7 +42,7 @@ export default function Modal({ duration, selectedFont, selectedTheme, setDurati
       <Modes tempDurations={tempDurations} setTempDurations={setTempDurations} />
       <Fonts tempFont={tempFont} setTempFont={setTempFont} />
       <ThemeColors tempThemeColor={tempThemeColor} setTempThemeColor={setTempThemeColor} />
-      <ApplyButton tempThemeColor={tempThemeColor} onClick={handleApply} />
-    </div>
+      <ApplyButton tempThemeColor={tempThemeColor} />
+    </form>
   )
 }
