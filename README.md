@@ -1,69 +1,66 @@
-# React + TypeScript + Vite
+# Frontend Mentor - Pomodoro app solution
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a solution to the [Pomodoro app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G).
 
-Currently, two official plugins are available:
+### The challenge
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Users should be able to:
 
-## Expanding the ESLint configuration
+- Set a pomodoro timer and short & long break timers
+- Customize how long each timer runs for
+- See a circular progress bar that updates every minute and represents how far through their timer they are
+- Customize the appearance of the app with the ability to set preferences for colors and fonts
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🔗 Links
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Live Site:** [https://pomodoro-fem.vercel.app/](https://pomodoro-fem.vercel.app/)
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🛠 Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vitest](https://vitest.dev/)
+- [Testing Library](https://testing-library.com/)
+- [React Circular Progressbar](https://www.npmjs.com/package/react-circular-progressbar)
+
+### 🚀 Prerequisites
+
+- Node.js (v18+ recommended)
+- npm
+
+### Installation
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+App runs at [http://localhost:5173](http://localhost:5173) by default.
+
+### Linting
+
+```bash
+npm run lint
+```
+
+### Testing
+
+```bash
+npm run test
+```
+
+### Production Build
+
+```bash
+npm run build
+```
+
+## 📄 License
+
+Licensed under the [MIT License](LICENSE).
