@@ -13,7 +13,7 @@ Users should be able to:
 
 ## 🔗 Links
 
-- **Live Site:** [https://pomodoro-fem.vercel.app/](https://pomodoro-fem.vercel.app/)
+- **Live Site:** [https://pomodoro.samchu.dev](https://pomodoro.samchu.dev)
 
 ## 🛠 Tech Stack
 
